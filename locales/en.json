@@ -4,6 +4,20 @@
       "NOT_FOUND": "Resource not found",
       "MISSING_PARAM": "Paramether is missing",
       "PARAM_LENGTH": "Paramether is too long" 
+    },
+    "admin" : {
+      "title": "Democracy OS",
+      "welcome": "Welcome",
+      "description": "Lorem ipsum sic dolor amet...",
+      "home": "Home",
+      "settings": "settings",
+      "posts": "Posts",
+      "reactions": "Reactions",
+      "users": "Users",
+      "create": "Create",
+      "edit": "Edit",
+      "delete": "Delete",
+      "refresh": "Refresh"
     }
   }
 }

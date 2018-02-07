@@ -4,6 +4,19 @@
       "NOT_FOUND": "Recurso no encontrado",
       "MISSING_PARAM": "Parámetro no encontrado",
       "PARAM_LENGTH": "Parámetro muy largo" 
+    },
+    "admin" : {
+      "welcome": "Bienvenido",
+      "description": "Lorem ipsum sic dolor amet...",
+      "home": "Inicio",
+      "settings": "Ajustes",
+      "posts": "Publicaciones",
+      "reactions": "Reacciones",
+      "users": "Usuarios",
+      "create": "Crear",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "refresh": "Actualizar"
     }
   }
 }
