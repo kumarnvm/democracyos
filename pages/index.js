@@ -1,20 +1,23 @@
 import React from 'react'
-import Globalize from 'globalize'
+import Globalize from 'globalize-webpack-plugin'
 import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
+import { messageFormatter as t } from 'globalize'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
     return {
-      session: await NextAuth.init({ req })
+      session: await NextAuth.init({ req }),
+      locale: 'es'
     }
   }
 
   constructor (props) {
     super(props)
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
+    Globalize.locale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
@@ -37,6 +40,7 @@ export default class extends React.Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"/>
         </Head>
         <div className="text-center">
+          <p>{t('error/NOT_FOUND')}</p>
           <h1 className="display-4 mt-3 mb-3">DemocracyOS</h1>
           <p className="lead mt-3 mb-3">Work in progress.</p>
           <SignInMessage {...this.props}/>
