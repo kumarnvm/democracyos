@@ -1,5 +1,5 @@
 import React from 'react'
-import Globalize from 'globalize-webpack-plugin'
+import Globalize from 'globalize'
 import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
