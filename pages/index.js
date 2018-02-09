@@ -1,10 +1,9 @@
 import React from 'react'
-import Globalize from 'globalize'
 import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
-import { messageFormatter as t } from 'globalize'
+import { t, setLocale } from '../client/i18n'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
@@ -17,7 +16,7 @@ export default class extends React.Component {
   constructor (props) {
     super(props)
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
-    Globalize.locale(this.props.locale)
+    setLocale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
