@@ -39,8 +39,7 @@ export default class extends React.Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"/>
         </Head>
         <div className="text-center">
-          <p>{t('error/NOT_FOUND')}</p>
-          <h1 className="display-4 mt-3 mb-3">DemocracyOS</h1>
+          <h1 className="display-4 mt-3 mb-3">{t('index/title')}</h1>
           <p className="lead mt-3 mb-3">Work in progress.</p>
           <SignInMessage {...this.props}/>
         </div>

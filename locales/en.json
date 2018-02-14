@@ -5,6 +5,9 @@
       "MISSING_PARAM": "Paramether is missing",
       "PARAM_LENGTH": "Paramether is too long" 
     },
+    "index": {
+      "title": "DemocracyOS"
+    },
     "admin" : {
       "title": "Democracy OS",
       "welcome": "Welcome",
@@ -14,6 +17,7 @@
       "posts": "Posts",
       "reactions": "Reactions",
       "users": "Users",
+      "profile": "Profile",
       "create": "Create",
       "edit": "Edit",
       "delete": "Delete",

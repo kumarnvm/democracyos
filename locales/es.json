@@ -5,6 +5,9 @@
       "MISSING_PARAM": "Parámetro no encontrado",
       "PARAM_LENGTH": "Parámetro muy largo" 
     },
+    "index": {
+      "title": "DemocracyOS"
+    },
     "admin" : {
       "welcome": "Bienvenido",
       "description": "Lorem ipsum sic dolor amet...",
@@ -13,6 +16,7 @@
       "posts": "Publicaciones",
       "reactions": "Reacciones",
       "users": "Usuarios",
+      "profile": "Perfil",
       "create": "Crear",
       "edit": "Editar",
       "delete": "Borrar",
