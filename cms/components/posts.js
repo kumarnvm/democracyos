@@ -1,5 +1,6 @@
 import React from 'react'
 import { Resource, List, Datagrid, TextField, Create, Edit, SimpleForm, DisabledInput, TextInput, DateInput, LongTextInput, DateField, EditButton, DeleteButton, PostTitle } from 'admin-on-rest'
+import { messageFormatter as t } from 'globalize'
 import BookIcon from 'material-ui/svg-icons/action/book'
 export const PostIcon = BookIcon
 
@@ -17,6 +18,7 @@ export const PostList = (props) => (
 export const PostCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
+    {console.log(t)}
       <TextInput source='title' />
       <TextInput source='description' options={{ multiLine: true }} />
       <LongTextInput source='content' />

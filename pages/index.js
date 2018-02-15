@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
+var Globalize = require( "globalize" );
 import { t, setLocale } from '../client/i18n'
 
 export default class extends React.Component {
@@ -29,7 +30,7 @@ export default class extends React.Component {
         Router.push('/auth/error?action=signout')
       })
   }
-
+  
   render () {
     return (
       <div className="container">
