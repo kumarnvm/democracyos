@@ -41,8 +41,8 @@ export default class extends React.Component {
         </Head>
         <div className="text-center">
           <p>{t('error/NOT_FOUND')}</p>
-          <h1 className="display-4 mt-3 mb-3">DemocracyOS</h1>
-          <p className="lead mt-3 mb-3">Work in progress.</p>
+          <h1 className="display-4 mt-3 mb-3">{t('admin/title')} </h1>
+          <p className="lead mt-3 mb-3"> {t('admin/workingprogress')}</p>
           <SignInMessage {...this.props}/>
         </div>
       </div>
@@ -55,7 +55,7 @@ export class SignInMessage extends React.Component {
     if (this.props.session.user) {
       return (
         <React.Fragment>
-          <p><Link href="/auth"><a className="btn btn-secondary">Manage Account</a></Link></p>
+          <p><Link href="/auth"><a className="btn btn-secondary">{t('admin/manage')} </a></Link></p>
           <form id="signout" method="post" action="/auth/signout" onSubmit={this.handleSignOutSubmit}>
             <input name="_csrf" type="hidden" value={this.props.session.csrfToken}/>
             <button type="submit" className="btn btn-outline-secondary">Sign out</button>
