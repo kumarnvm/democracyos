@@ -18,25 +18,16 @@ router.route('/')
         data: newSetting
       })
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .get(async (req, res, next) => {
+    // returns Settings only record
     try {
-      const results = await Setting.list({ limit: req.query.limit, page: req.query.page })
-
-      res.status(OK).json({
-        results: results.docs,
-        pagination: {
-          count: results.total,
-          page: results.page,
-          limit: results.limit
-        }
-      })
+      const results = await Setting.getOne()
+      res.status(OK).json(results)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 
@@ -46,8 +37,7 @@ router.route('/:id')
       const setting = await Setting.get(req.params.id)
       res.status(OK).json(setting)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .put(async (req, res, next) => {
@@ -55,8 +45,7 @@ router.route('/:id')
       const updatedSetting = await Setting.update({ id: req.params.id, setting: req.body })
       res.status(OK).json(updatedSetting)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .delete(async (req, res, next) => {
@@ -64,8 +53,7 @@ router.route('/:id')
       await Setting.remove(req.params.id)
       res.status(NO_CONTENT).json(req.params.id)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 

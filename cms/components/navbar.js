@@ -5,12 +5,12 @@ import { MenuItemLink, getResources } from 'admin-on-rest'
 
 const Navbar = ({ resources, onMenuTap, logout }) => (
   <nav>
- {console.log(t('admin/home'))} 
-    <MenuItemLink to='/admin' primaryText={t('admin/home')}  onClick={onMenuTap} />
-    <MenuItemLink to='/admin/settings' primaryText={t('admin/settings')} onClick={onMenuTap} />
-    <MenuItemLink to='/admin/posts' primaryText={t('admin/posts')} onClick={onMenuTap} />
-    <MenuItemLink to='/admin/reactions' primaryText={t('admin/reactions')} onClick={onMenuTap} />
-    <MenuItemLink to='/admin/users' primaryText={t('admin/users')} onClick={onMenuTap} />
+    {console.log(t('admin/home'))}
+    <MenuItemLink to='/admin' primaryText='Home' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/settings' primaryText='Settings' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/posts' primaryText='Posts' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/reaction-rule' primaryText='Reaction Rules' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/users' primaryText='Users' onClick={onMenuTap} />
   </nav>
 )
 

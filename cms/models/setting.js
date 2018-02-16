@@ -6,18 +6,11 @@ const mongoosePaginate = require('mongoose-paginate')
  */
 
 const Setting = new mongoose.Schema({
-  settingName: String,
+  communityName: String,
   logo: String,
   permissions: String,
   theme: String
 }, { timestamps: true })
-
-/**
- * Define Schema Indexes
- */
-
-Setting.index({ email: 1 }, { unique: true })
-Setting.index({ username: 1 }, { unique: true })
 
 /**
  * Model's Plugin Extensions

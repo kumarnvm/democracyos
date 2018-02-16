@@ -1,6 +1,9 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
 const Setting = require('../models/setting')
+const {
+  ErrSettingsInit
+} = require('../../main/errors')
 
 /**
  * Create setting
@@ -11,8 +14,11 @@ const Setting = require('../models/setting')
 
 exports.create = function create (setting) {
   log.debug('setting db-api create')
-
-  return (new Setting(setting)).save()
+  return Setting.findOne({})
+    .then((_setting) => {
+      if (_setting) throw ErrSettingsInit
+      if (!_setting) return (new Setting(setting)).save()
+    })
 }
 
 /**
@@ -71,4 +77,15 @@ exports.remove = function remove (id) {
 
   return Setting.findOne({ _id: ObjectId(id) })
     .then((setting) => setting.remove())
+}
+
+/**
+ * Get one setting
+ * @method get
+ * @return {promise}
+ */
+
+exports.getOne = function getOne () {
+  log.debug('setting db-api get one')
+  return Setting.findOne({})
 }
