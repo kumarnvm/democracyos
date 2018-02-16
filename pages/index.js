@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
+var Globalize = require( "globalize" );
 import { t, setLocale } from '../client/i18n'
 
 export default class extends React.Component {
@@ -29,7 +30,6 @@ export default class extends React.Component {
         Router.push('/auth/error?action=signout')
       })
   }
-
   render () {
     return (
       <div className="container">
@@ -39,8 +39,8 @@ export default class extends React.Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"/>
         </Head>
         <div className="text-center">
-          <h1 className="display-4 mt-3 mb-3">{t('index/title')}</h1>
-          <p className="lead mt-3 mb-3">Work in progress.</p>
+          <h1 className="display-4 mt-3 mb-3">{t('admin/title')} </h1>
+          <p className="lead mt-3 mb-3"> {t('admin/workingprogress')}</p>
           <SignInMessage {...this.props}/>
         </div>
       </div>
@@ -53,7 +53,7 @@ export class SignInMessage extends React.Component {
     if (this.props.session.user) {
       return (
         <React.Fragment>
-          <p><Link href="/auth"><a className="btn btn-secondary">Manage Account</a></Link></p>
+          <p><Link href="/auth"><a className="btn btn-secondary">{t('admin/manage')} </a></Link></p>
           <form id="signout" method="post" action="/auth/signout" onSubmit={this.handleSignOutSubmit}>
             <input name="_csrf" type="hidden" value={this.props.session.csrfToken}/>
             <button type="submit" className="btn btn-outline-secondary">Sign out</button>
