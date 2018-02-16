@@ -30,7 +30,6 @@ export default class extends React.Component {
         Router.push('/auth/error?action=signout')
       })
   }
-  
   render () {
     return (
       <div className="container">
